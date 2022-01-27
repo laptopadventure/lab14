@@ -36,20 +36,20 @@ function showCart() {
     let tr = tbody.appendChild(document.createElement('tr'));
     for(let i = 0; i < 3; i++) {
       let td = tr.appendChild(document.createElement('td'));
-      console.log(i)
+      console.log(i);
       switch(i) {
-        case 0:
-          let a = td.appendChild(document.createElement('a'))
-          a.href = "#"
-          a.textContent = 'Remove item from cart'
-          break
-        case 1:
-          td.textContent = `${cartItem.quantity} in cart`
-          break
-        case 2:
-          console.log("product name")
-          td.textContent = `${cartItem.product}`
-          break
+      case 0:
+        let a = td.appendChild(document.createElement('a'));
+        a.href = '#';
+        a.textContent = 'Remove item from cart';
+        break;
+      case '1':
+        td.textContent = `${cartItem.quantity} in cart`;
+        break;
+      case '2':
+        console.log('product name');
+        td.textContent = `${cartItem.product}`;
+        break;
       }
     }
   }
