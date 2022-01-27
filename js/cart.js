@@ -36,17 +36,17 @@ function showCart() {
     let tr = tbody.appendChild(document.createElement('tr'));
     for(let i = 0; i < 3; i++) {
       let td = tr.appendChild(document.createElement('td'));
-      console.log(i);
+      
       switch(i) {
       case 0:
         let a = td.appendChild(document.createElement('a'));
         a.href = '#';
-        a.textContent = 'Remove item from cart';
+        a.textContent = 'Remove item';
         break;
-      case '1':
+      case 1:
         td.textContent = `${cartItem.quantity} in cart`;
         break;
-      case '2':
+      case 2:
         console.log('product name');
         td.textContent = `${cartItem.product}`;
         break;
@@ -57,9 +57,25 @@ function showCart() {
 }
 
 function removeItemFromCart(event) {
-  // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  // TODO: Save the cart back to local storage
-  // TODO: Re-draw the cart table
+
+
+  // DONE: When a delete link is clicked, use cart.removeItem to remove the correct item
+  if (!event.target.href){
+    return
+  }
+  let tr = event.target.parentNode.parentNode
+  let productName = tr.lastChild.textContent
+  
+  for(let cartItem of cart.items) {
+    if (cartItem.product === productName){
+      cart.removeItem(cartItem)
+      break
+    }
+  } 
+  // DONE: Save the cart back to local storage
+  cart.saveToLocalStorage()
+  // DONE: Re-draw the cart table
+  renderCart()
 
 }
 

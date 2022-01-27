@@ -1,1 +1,39 @@
-/* TODO: Make it awesome */
+/* DONE: Make it awesome */
+
+body {
+    background-color: antiquewhite;
+    width: 90%;
+    margin:auto;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+ul li{
+    padding: 0.5rem;
+    background-color: rgba(255,255,255,0.5);
+    border: 2px solid black;
+}
+h1{
+    font-size: 22px;
+    font-weight: bold;
+}
+p{
+    padding: .5rem;
+}
+ol{
+    padding: 0.5em;
+    list-style-type: disc;
+    list-style-position: inside;
+
+}
+form{
+    padding: 0.5rem;
+    border: 2px solid black;
+}
+table td{
+    border-collapse: collapse;
+    border: 2px solid black;
+    padding: .5rem;
+}
